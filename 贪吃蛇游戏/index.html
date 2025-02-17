@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>贪吃蛇游戏</title>
+    <style>
+        .game-container {
+            width: 800px;
+            margin: 20px auto;
+            text-align: center;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        canvas {
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        .btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #2980b9;
+        }
+        .difficulty {
+            margin: 20px 0;
+        }
+        select {
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .score-board {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>贪吃蛇游戏</h1>
+        <div class="score-board">得分: <span id="score">0</span></div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="controls">
+            <button class="btn" id="startBtn">开始游戏</button>
+            <button class="btn" id="pauseBtn">暂停</button>
+            <button class="btn" id="restartBtn">重新开始</button>
+        </div>
+        <div class="difficulty">
+            难度:
+            <select id="difficulty">
+                <option value="easy">简单</option>
+                <option value="medium">中等</option>
+                <option value="hard">困难</option>
+            </select>
+        </div>
+    </div>
+    <script src="game.js"></script>
+    <script>
+        const game = new SnakeGame('gameCanvas');
+    </script>
+</body>
+</html> 
